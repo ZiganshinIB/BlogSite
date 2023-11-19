@@ -18,7 +18,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250,
-                            unique_for_date='publish') # slug будет настроен как /year/month/day/slug_name
+                            unique_for_date='publish')
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="blog_post")
     body = models.TextField()
