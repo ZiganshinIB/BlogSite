@@ -17,4 +17,25 @@
         </a>
     </p>
 
+    {% with comments.count as total_comments %}
+        <h2>
+            {{ total_comments }}
+            {% if total_comments <> 1 %}
+                Комментарии
+            {% else %}
+                Комментария
+            {% endif %}
+        </h2>
+    {% endwith %}
+    {% for comment in comments %}
+        <div class="comme">
+            <p class="info">
+                Comment {{ forloop.counter }} by {{ comment.name }} {{ comment.created }}
+            </p>
+            {{ comment.body|linebreaks }}
+        </div>
+    {% empty %}
+        <p>Без комментариев</p>
+    {% endfor %}
+    {% include "blog/post/includes/comment_form.html" %}
 {% endblock %}
