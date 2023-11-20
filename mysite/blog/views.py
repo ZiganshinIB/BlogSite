@@ -1,9 +1,9 @@
 from .models import Post
 from .forms import EmailPostForm
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404  # , redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.mail import send_mail
-from django.views.decorators.http import require_POST
+# from django.views.decorators.http import require_POST
 from django.views.generic import ListView
 
 # Create your views here.
