@@ -20,7 +20,7 @@
     {% with comments.count as total_comments %}
         <h2>
             {{ total_comments }}
-            {% if total_comments <> 1 %}
+            {% if total_comments != 1 %}
                 Комментарии
             {% else %}
                 Комментария
